@@ -3,12 +3,15 @@ body{
     font-family: "ヒラギノ角ゴ Pro W3",sans-serif;
     background: #dddddd;/*背景色*/
 }
+*{
+    box-sizing: border-box;
+ }
 h1{/*タイトル*/
     padding-top: 80px;/*上の余白*/
 }
 h2{/*見出し*/
     padding : 10px;
-    margin-left: 1px;
+    margin-left: 30%;
     background: #00a2ff63;/*背景色*/
     border-left: 5px solid #00a2ff;/*左の線*/
     border-bottom: 1px solid #00a2ff;/*下の線*/
@@ -23,7 +26,9 @@ h3{/*小見出し*/
     width: 500px;
 }
 p{/*本文*/
-    margin-left: 30px;
+    padding : 10px;
+    margin-left: 30%;
+    white-space: nowrap;
 }
 nav{/*メニューバーの箱*/
     width: 100%;
@@ -77,5 +82,12 @@ b:hover{
 .centering_parent{
     text-align: center;
 }
+img{
+    width: 30%;
+    height: auto;
+}
+.is-column {
+    flex-direction: column;
+  }
 
 
