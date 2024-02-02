@@ -1,0 +1,8 @@
+img{
+    width: 40%;
+    height: auto;
+}
+.flexbox{
+    display: flex;
+    flex-direction: column;
+}

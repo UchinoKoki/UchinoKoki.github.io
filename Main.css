@@ -83,13 +83,5 @@ a:hover{
 .centering_parent{
     text-align: center;
 }
-.flexbox{
-    display: flex;
-    flex-direction: column;
-}
-img{
-    width: 40%;
-    height: auto;
-}
 
 
