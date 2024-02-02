@@ -8,14 +8,17 @@ body{
  }
 h1{/*タイトル*/
     padding-top: 80px;/*上の余白*/
+    margin-left: 30%;
+    margin-right: 30%;
 }
 h2{/*見出し*/
     padding : 10px;
     margin-left: 30%;
+    margin-right: 30%;
     background: #00a2ff63;/*背景色*/
     border-left: 5px solid #00a2ff;/*左の線*/
     border-bottom: 1px solid #00a2ff;/*下の線*/
-    width: 600px;
+    width: 675px;
 }
 h3{/*小見出し*/
     padding : 10px;
@@ -23,6 +26,7 @@ h3{/*小見出し*/
     background: #00a2ff63;/*背景色*/
     border-left: 5px solid #00a2ff;/*左の線*/
     border-bottom: 1px solid #00a2ff;/*下の線*/
+    margin-right: 30%;
     width: 500px;
 }
 p{/*本文*/
