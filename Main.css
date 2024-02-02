@@ -40,17 +40,38 @@ nav{/*メニューバーの箱*/
 ui{/*メニューバーにする*/
     display: flex;
 }
+#Tab{
+    margin: 0 100px;/*リスト間の余白*/
+    display: block;
+    margin-right: 50px;
+    color : white;
+
+}
+#Tab:hover{
+    color: #2a2a2a;
+}
+#ContactLink{
+    color :dimgray;
+}
+#ContactLink:hover{
+    color: #b2b2b2;
+}
+
 li{/*メニューバーのリスト*/
     list-style: none;
-    margin: 0 100px;/*リスト間の余白*/
 }
 a{
+    text-decoration: none;
+}
+b{
     display: block;
     text-decoration: none;
-    color: white;
-    margin-right: 50px;
+    color: gray;
 }
 a:hover{
+    color: #505050;
+}
+b:hover{
     color: #494949;
 }
 .centering_parent{
