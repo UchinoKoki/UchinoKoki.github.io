@@ -15,7 +15,7 @@ h2{/*見出し*/
     background: #00a2ff63;/*背景色*/
     border-left: 5px solid #00a2ff;/*左の線*/
     border-bottom: 1px solid #00a2ff;/*下の線*/
-    width: 500px;
+    width: 600px;
 }
 h3{/*小見出し*/
     padding : 10px;
@@ -27,7 +27,7 @@ h3{/*小見出し*/
 }
 p{/*本文*/
     padding : 10px;
-    margin-left: 30%;
+    margin-left : 35%;
     white-space: nowrap;
 }
 nav{/*メニューバーの箱*/
@@ -57,6 +57,7 @@ ui{/*メニューバーにする*/
 }
 #ContactLink{
     color :dimgray;
+    text-align: center;
 }
 #ContactLink:hover{
     color: #b2b2b2;
@@ -68,26 +69,19 @@ li{/*メニューバーのリスト*/
 a{
     text-decoration: none;
 }
-b{
-    display: block;
-    text-decoration: none;
-    color: gray;
-}
 a:hover{
     color: #505050;
 }
-b:hover{
-    color: #494949;
-}
 .centering_parent{
     text-align: center;
+}
+.flexbox{
+    display: flex;
+    flex-direction: column;
 }
 img{
     width: 30%;
     height: auto;
 }
-.is-column {
-    flex-direction: column;
-  }
 
 
