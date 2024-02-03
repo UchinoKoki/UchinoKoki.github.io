@@ -1,9 +1,9 @@
 @charset "UTF-8";
-body{
+body{/*背景色*/
     font-family: "ヒラギノ角ゴ Pro W3",sans-serif;
     background: #dddddd;/*背景色*/
 }
-*{
+*{/*余白をなくす*/
     box-sizing: border-box;
  }
 h1{/*タイトル*/
@@ -53,35 +53,33 @@ nav{/*メニューバーの箱*/
 ui{/*メニューバーにする*/
     display: flex;
 }
-#Tab{
+#Tab{/*メニューバーのリスト*/
     margin: 0 100px;/*リスト間の余白*/
     display: block;
     margin-right: 50px;
     color : white;
-
 }
-#Tab:hover{
+#Tab:hover{/*マウスを乗せたときの色*/
     color: #2a2a2a;
 }
-#ContactLink{
+#ContactLink{/*メニューバーのリスト*/
     color :rgb(67, 67, 67);
     text-align: center;
 }
-#ContactLink:hover{
+#ContactLink:hover{/*マウスを乗せたときの色*/
     color: #b2b2b2;
 }
-
 li{/*メニューバーのリスト*/
     list-style: none;
 }
 a{
     text-decoration: none;
 }
-a:hover{
+a:hover{/*マウスを乗せたときの色*/
     color: #505050;
 }
-.centering_parent{
+
+
+.centering_parent{/*中央揃え*/
     text-align: center;
 }
-
-
