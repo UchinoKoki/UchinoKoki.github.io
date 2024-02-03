@@ -23,15 +23,6 @@ h2{/*見出し*/
     border-bottom: 1px solid #00a2ff;/*下の線*/
     width: 675px;
 }
-h3{/*小見出し*/
-    padding : 10px;
-    padding-left: 30px;
-    background: #00a2ff63;/*背景色*/
-    border-left: 5px solid #00a2ff;/*左の線*/
-    border-bottom: 1px solid #00a2ff;/*下の線*/
-    margin-right: 30%;
-    width: 500px;
-}
 p{/*本文*/
     padding : 2px;
     margin-left : 32%;
