@@ -64,7 +64,7 @@ ui{/*メニューバーにする*/
     color: #2a2a2a;
 }
 #ContactLink{
-    color :dimgray;
+    color :rgb(67, 67, 67);
     text-align: center;
 }
 #ContactLink:hover{
