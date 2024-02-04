@@ -1,8 +1,10 @@
 img{
-    width: 40%;
     height: auto;
+    width: 600px;
 }
 .flexbox{
     display: flex;
     flex-direction: column;
+    margin-left : 32%;
+    margin-right: 30%;
 }
