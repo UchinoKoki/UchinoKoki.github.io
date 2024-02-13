@@ -62,7 +62,7 @@ ui{/*メニューバーにする*/
 #ContactLink{/*メニューバーのリスト*/
     color :rgb(67, 67, 67);
     text-align: center;
-    margin-left : 32%;
+    margin-left : 30%;
     margin-right: 30%;
     white-space: nowrap;
 }
