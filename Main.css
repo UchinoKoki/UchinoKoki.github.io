@@ -16,17 +16,18 @@ h1{/*タイトル*/
 }
 h2{/*見出し*/
     padding : 10px;
-    margin-left: 28%;
-    margin-right: 30%;
     background: #00a2ff63;/*背景色*/
     border-left: 5px solid #00a2ff;/*左の線*/
     border-bottom: 1px solid #00a2ff;/*下の線*/
-    width: 700px;
+    text-align: left;
+    margin-left: 30%;
+    width: 100%;
 }
 h3{
     /*小見出し*/
     margin-left: 32%;
     margin-right: 30%;
+    width: 100%;
     white-space: nowrap;
 }
 p{/*本文*/
