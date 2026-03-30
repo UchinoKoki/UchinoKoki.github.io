@@ -47,8 +47,7 @@ PlayAndCreateのゲームジャムにて制作しました。
 タッチで敵を倒す2Dアクションゲームです。
 ObjectPoolingを実装したり、AddressableでUnityなしでレベルデザインできるようにしたりと、工夫を凝らしました。
 
-![PixelGuardian_Demo](ここに動画のURL（YouTube等）を貼り付けてください)
-※動画ファイルが大きいため、GitHubに直接アップロードできませんでした。YouTube等にアップロードした動画のURLをここに貼り付けてください。
+[動画はこちらから確認できます（Google Driveへ遷移します）](https://drive.google.com/file/d/1UafwbqwM4_ldarHNot-Dcd4P6Xr_H0Es/view?usp=sharing)
 
 ### FILEuS
 制作: Siv3D
