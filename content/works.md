@@ -58,6 +58,31 @@ ObjectPoolingを実装したり、AddressableでUnityなしでレベルデザイ
 
 [ここをクリックしたら外部ページへ遷移します](https://scrapbox.io/bnscup2025/FILEuS)
 
+### Falling Slime
+制作: Unreal Engine 5
+Tokyo Game Show 2024 の学内ブースで展示した作品です。
+ギミックの実装と動作の軽量化を担当しました。
+
+[動画はこちらから確認できます（YouTubeへ遷移します）](https://www.youtube.com/watch?v=WjKkpfJfV7s)
+
+## In Progress
+
+### Endless Guardian
+制作: Unity
+ローグライク・タワーディフェンスです。
+AIを活用しながら、一人で制作を進めています。
+ステージを生成し続けることで「Endless」を実現しようと試行錯誤しています。
+
+### Game Idea Tool
+研究の一環として制作したツールです。
+ゲームの企画制作をLLMでサポートします。
+「体験」という、LLMがまだ扱いにくい領域まで踏み込めるよう挑戦しています。
+
+### AI彼女
+制作: Python / Docker
+AIで彼女を作る試みです。
+ChatGPTのプロンプト、GPTs に続く3度目の挑戦として、Python と RNN を用いた「会話できる彼女」を目指しています。
+
 ## Others
 
 ### ボカロ部
