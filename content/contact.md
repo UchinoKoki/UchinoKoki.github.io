@@ -1,7 +1,5 @@
 # Contact
 
-ご質問・ご依頼等は Twitter（X）の DM よりご連絡ください。
-
 ## 連絡先
 
 - [Twitter / X: @Null_Ref_Exp](https://twitter.com/Null_Ref_Exp) — 開発の近況や気づきを発信しています。
