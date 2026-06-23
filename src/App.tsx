@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
@@ -8,6 +8,24 @@ function cn(...inputs: ClassValue[]) {
 }
 
 type Section = 'profile' | 'works' | 'contact';
+type Heading = { level: number; text: string };
+
+function extractHeadings(markdown: string): Heading[] {
+  return markdown
+    .split('\n')
+    .filter(line => /^#{2,3} /.test(line))
+    .map(line => ({
+      level: line.startsWith('### ') ? 3 : 2,
+      text: line.replace(/^#{2,3} /, ''),
+    }));
+}
+
+function hastText(node: any): string {
+  if (!node?.children) return '';
+  return node.children
+    .map((c: any) => c.type === 'text' ? c.value : hastText(c))
+    .join('');
+}
 
 function App() {
   const [activeSection, setActiveSection] = useState<Section>('profile');
@@ -18,10 +36,13 @@ function App() {
       .then(res => res.text())
       .then(text => setContent(text))
       .catch(err => console.error('Failed to load content:', err));
-    
-    // Scroll to top on section change
     window.scrollTo(0, 0);
   }, [activeSection]);
+
+  const headings = useMemo(
+    () => activeSection === 'works' ? extractHeadings(content) : [],
+    [activeSection, content]
+  );
 
   const navItems = [
     { id: 'profile', label: 'Home' },
@@ -31,7 +52,6 @@ function App() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      {/* Top Navigation - Modernized Version of Original Fixed Nav */}
       <nav className="fixed top-0 left-0 w-full h-[70px] bg-[#696969] shadow-md z-50 flex items-center justify-center px-4">
         <ul className="flex gap-8 md:gap-24">
           {navItems.map(({ id, label }) => (
@@ -51,12 +71,43 @@ function App() {
         </ul>
       </nav>
 
-      {/* Main Content Area */}
       <main className="flex-1 mt-[70px] pb-20 px-4 md:px-0">
         <div className="max-w-4xl mx-auto mt-12 mb-12">
+
+          {/* 目次 (Works のみ) */}
+          {headings.length > 0 && (
+            <nav className="mb-10 p-5 border border-gray-200 rounded-xl bg-gray-50">
+              <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-3">目次</p>
+              <ul className="space-y-1">
+                {headings.map((h, i) => (
+                  <li key={i}>
+                    {h.level === 2 ? (
+                      <span className="block text-sm font-semibold text-gray-600 mt-3 first:mt-0">
+                        {h.text}
+                      </span>
+                    ) : (
+                      <a
+                        href={`#${h.text}`}
+                        className="block text-sm text-blue-600 hover:underline pl-4 py-0.5"
+                      >
+                        {h.text}
+                      </a>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          )}
+
           <div className="prose">
             <ReactMarkdown
               components={{
+                h2: ({node, children}) => (
+                  <h2 id={hastText(node)}>{children}</h2>
+                ),
+                h3: ({node, children}) => (
+                  <h3 id={hastText(node)}>{children}</h3>
+                ),
                 p: ({node, children}) => {
                   if (node) {
                     const nonEmpty = node.children.filter(
@@ -93,7 +144,7 @@ function App() {
             </ReactMarkdown>
           </div>
         </div>
-        
+
         <footer className="mt-20 py-8 border-t border-gray-300 text-center text-gray-600 text-sm">
           © {new Date().getFullYear()} Koki Uchino.
         </footer>
