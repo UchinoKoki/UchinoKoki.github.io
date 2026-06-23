@@ -57,21 +57,35 @@ function App() {
           <div className="prose">
             <ReactMarkdown
               components={{
+                p: ({node, children}) => {
+                  if (node) {
+                    const nonEmpty = node.children.filter(
+                      (c) => !(c.type === 'text' && c.value.trim() === '')
+                    );
+                    const allImages = nonEmpty.length >= 2 && nonEmpty.every(
+                      (c) => c.type === 'element' && c.tagName === 'img'
+                    );
+                    if (allImages) {
+                      return (
+                        <div className="my-6 grid grid-cols-2 gap-2">
+                          {children}
+                        </div>
+                      );
+                    }
+                  }
+                  return <p>{children}</p>;
+                },
                 img: ({node, ...props}) => {
-                  const isVideo = props.src?.endsWith('.mp4');
-                  return (
-                    <div className="my-10 flex flex-col items-center gap-4 md:flex-row md:justify-center">
-                      {isVideo ? (
-                        <video 
-                          src={props.src} 
-                          controls 
-                          className="max-w-full md:max-w-[80%] h-auto rounded-xl shadow-lg" 
-                        />
-                      ) : (
-                        <img {...props} className="max-w-full md:max-w-[45%] h-auto" />
-                      )}
-                    </div>
-                  );
+                  if (props.src?.endsWith('.mp4')) {
+                    return (
+                      <video
+                        src={props.src}
+                        controls
+                        className="w-full h-auto rounded-xl shadow-lg"
+                      />
+                    );
+                  }
+                  return <img {...props} className="w-full h-auto rounded-lg" />;
                 },
               }}
             >
