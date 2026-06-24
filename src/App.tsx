@@ -74,34 +74,37 @@ function App() {
       <main className="flex-1 mt-[70px] pb-20 px-4 md:px-0">
         <div className="max-w-4xl mx-auto mt-12 mb-12">
 
-          {/* 目次 (Works のみ) */}
-          {headings.length > 0 && (
-            <nav className="mb-10 p-5 border border-gray-200 rounded-xl bg-gray-50">
-              <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-3">目次</p>
-              <ul className="space-y-1">
-                {headings.map((h, i) => (
-                  <li key={i}>
-                    {h.level === 2 ? (
-                      <span className="block text-sm font-semibold text-gray-600 mt-3 first:mt-0">
-                        {h.text}
-                      </span>
-                    ) : (
-                      <a
-                        href={`#${h.text}`}
-                        className="block text-sm text-blue-600 hover:underline pl-4 py-0.5"
-                      >
-                        {h.text}
-                      </a>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          )}
-
           <div className="prose">
             <ReactMarkdown
               components={{
+                h1: ({children}) => (
+                  <>
+                    <h1>{children}</h1>
+                    {headings.length > 0 && (
+                      <nav className="mb-10 p-5 border border-gray-200 rounded-xl bg-gray-50 not-prose">
+                        <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-3">目次</p>
+                        <ul className="space-y-1">
+                          {headings.map((h, i) => (
+                            <li key={i}>
+                              {h.level === 2 ? (
+                                <span className="block text-sm font-semibold text-gray-600 mt-3 first:mt-0">
+                                  {h.text}
+                                </span>
+                              ) : (
+                                <a
+                                  href={`#${h.text}`}
+                                  className="block text-sm text-blue-600 hover:underline pl-4 py-0.5"
+                                >
+                                  {h.text}
+                                </a>
+                              )}
+                            </li>
+                          ))}
+                        </ul>
+                      </nav>
+                    )}
+                  </>
+                ),
                 h2: ({node, children}) => (
                   <h2 id={hastText(node)}>{children}</h2>
                 ),
